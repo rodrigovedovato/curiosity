@@ -6,4 +6,4 @@ case class Rover(
   facingDirection: Direction,
   explorationSurfaceEdge: Coordinate)
 
-case class RoverLandingResponse(name: String, landingTime: Long, roverActions: Map[String, String])
+case class RoverLandingResponse(id: RoverId, name: String, landingTime: Long, roverActions: Map[String, String])

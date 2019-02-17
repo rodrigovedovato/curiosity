@@ -9,13 +9,15 @@ import br.vedovato.modules.RoverModule
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{ Failure, Success }
 
+import br.vedovato.persistence.Implicits._
+
 object Runner extends App with RoverEndpoints {
   implicit val sys: ActorSystem = ActorSystem()
   implicit val mat: ActorMaterializer = ActorMaterializer()
 
   override def roverModule = new RoverModule()
 
-  Http().bindAndHandle(all, "localhost", 8080) onComplete {
+  Http().bindAndHandle(roverRoutes, "localhost", 8080) onComplete {
     case Success(bound) =>
       println(s"Server online at http://${bound.localAddress.getHostString}:${bound.localAddress.getPort}/")
     case Failure(e) =>
