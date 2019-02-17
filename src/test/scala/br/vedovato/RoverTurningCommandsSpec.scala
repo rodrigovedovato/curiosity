@@ -1,22 +1,20 @@
 package br.vedovato
-import org.scalatest.{ FunSpec, FunSuite }
-import br.vedovato.command.RoverCommands._
+import org.scalatest.FunSpec
+import br.vedovato.ops._
 import br.vedovato.model._
 
 class RoverTurningCommandsSpec extends FunSpec {
   val northFacingRover = Rover(
-    name = "Unit Test Rover",
-    id = 1,
+    name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.North,
-    surface = Surface(Coordinate(5, 5), Map[Coordinate, RoverId]()))
+    explorationSurfaceEdge = Coordinate(5, 5))
 
   val southFacingRover = Rover(
-    name = "Unit Test Rover",
-    id = 1,
+    name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.South,
-    surface = Surface(Coordinate(5, 5), Map[Coordinate, RoverId]()))
+    explorationSurfaceEdge = Coordinate(5, 5))
 
   describe("A rover") {
     describe("when facing north") {

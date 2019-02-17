@@ -1,18 +1,22 @@
 package br.vedovato
 import br.vedovato.model._
-import br.vedovato.command.RoverCommands._
+import br.vedovato.ops._
 import org.scalatest.FunSpec
 
 class RoverMovementCommandSpec extends FunSpec {
+
   val northFacingRover = Rover(
-    name = "Unit Test Rover",
-    id = 1,
+    name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.North,
-    surface = Surface(Coordinate(5, 5), Map[Coordinate, RoverId]()))
+    explorationSurfaceEdge = Coordinate(5, 5))
 
-  val southFacingRover: Rover = northFacingRover.copy(facingDirection = Directions.South, position = Coordinate(5, 5))
-  val westFacingRover: Rover = northFacingRover.copy(facingDirection = Directions.West, position = Coordinate(5, 5))
+  val southFacingRover: Rover =
+    northFacingRover.copy(facingDirection = Directions.South, position = Coordinate(5, 5))
+
+  val westFacingRover: Rover =
+    northFacingRover.copy(facingDirection = Directions.West, position = Coordinate(5, 5))
+
   val eastFacingRover: Rover = northFacingRover.copy(facingDirection = Directions.East)
 
   describe("A rover") {

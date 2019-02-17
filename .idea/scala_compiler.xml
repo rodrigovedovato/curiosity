@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="curiosity,curiosity_5265" />
+    <profile name="sbt 1" modules="curiosity_5265">
+      <option name="implicitConversions" value="true" />
+    </profile>
+    <profile name="sbt 2" modules="curiosity" />
   </component>
 </project>

@@ -1,8 +1,9 @@
 package br.vedovato.model
 
 case class Rover(
-  name: String,
-  id: RoverId,
+  name: Option[String],
   position: Coordinate,
   facingDirection: Direction,
-  surface: Surface)
+  explorationSurfaceEdge: Coordinate)
+
+case class RoverLandingResponse(name: String, landingTime: Long, roverActions: Map[String, String])

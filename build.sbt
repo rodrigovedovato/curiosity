@@ -3,6 +3,7 @@ lazy val akkaVersion    = "2.5.21"
 lazy val circe = "0.9.3"
 lazy val enumeratumVersion = "1.5.13"
 lazy val enumeratumCirceVersion = "1.5.20"
+lazy val scalaCacheVersion = "0.27.0"
 
 lazy val root = (project in file(".")).
   settings(
@@ -25,6 +26,8 @@ lazy val root = (project in file(".")).
       "io.circe" %% "circe-derivation" % "0.10.0-M1",
       "com.beachape" %% "enumeratum" % enumeratumVersion,
       "com.beachape" %% "enumeratum-circe" % enumeratumCirceVersion,
+      "com.github.cb372" %% "scalacache-core" % scalaCacheVersion,
+      "com.github.cb372" %% "scalacache-caffeine" % scalaCacheVersion,
 
       "com.typesafe.akka" %% "akka-http-testkit"    % akkaHttpVersion % Test,
       "com.typesafe.akka" %% "akka-testkit"         % akkaVersion     % Test,
