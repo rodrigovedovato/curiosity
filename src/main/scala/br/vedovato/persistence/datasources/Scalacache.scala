@@ -1,14 +1,11 @@
 package br.vedovato.persistence.datasources
 
-import br.vedovato.persistence.DataSource
-
 import scala.concurrent.{ Await, ExecutionContext, Future }
 import scalacache._
 import scalacache.modes.scalaFuture._
 
 import scala.collection.mutable
 import scala.util.{ Failure, Success }
-
 import scala.concurrent.duration._
 
 trait Scalacache[Content] extends DataSource[Content, String] {

@@ -1,4 +1,4 @@
-package br.vedovato.persistence
+package br.vedovato.persistence.datasources
 import scala.concurrent.Future
 
 trait DataSource[Content, Key] {

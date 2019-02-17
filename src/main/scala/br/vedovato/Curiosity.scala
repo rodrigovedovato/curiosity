@@ -1,17 +1,17 @@
-package br.vedovato.server
+package br.vedovato
 
 import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import br.vedovato.endpoints.RoverEndpoints
 import br.vedovato.modules.RoverModule
+import br.vedovato.persistence.Implicits.roverCache
 
-import scala.concurrent.ExecutionContext.Implicits.global
 import scala.util.{ Failure, Success }
 
-import br.vedovato.persistence.Implicits._
+import scala.concurrent.ExecutionContext.Implicits.global
 
-object Runner extends App with RoverEndpoints {
+object Curiosity extends App with RoverEndpoints {
   implicit val sys: ActorSystem = ActorSystem()
   implicit val mat: ActorMaterializer = ActorMaterializer()
 

@@ -1,6 +1,6 @@
 package br.vedovato
 import br.vedovato.model.{ Rover, RoverId }
-import br.vedovato.persistence.datasources.Scalacache
+import br.vedovato.persistence.datasources.{ DataSource, Scalacache }
 import scalacache.Cache
 import scalacache.caffeine.CaffeineCache
 

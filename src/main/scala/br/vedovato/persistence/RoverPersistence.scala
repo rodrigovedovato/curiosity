@@ -1,6 +1,7 @@
 package br.vedovato.persistence
 
 import br.vedovato.model.{ Rover, RoverId }
+import br.vedovato.persistence.datasources.DataSource
 
 import scala.concurrent.{ ExecutionContext, Future }
 
