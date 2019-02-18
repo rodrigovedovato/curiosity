@@ -12,9 +12,9 @@ The following software need to be installed in order for this API to be built
 1. Java8
 2. [sbt](https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Mac.html)
 
-## Building the API
+## Running the API
 
-To build this API, execute the run.sh script. 
+To build and run this API, execute the run.sh script. 
 
 ## API methods
 
