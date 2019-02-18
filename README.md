@@ -123,6 +123,6 @@ No request body
 
 Rover's current state 
 
-###Todo
+TODO
 
 1. Create docker image for application
