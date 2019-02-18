@@ -20,11 +20,11 @@ To build this API, execute the run.sh script.
 
 The API provides the following methods:
 
-`POST /rovers`
+#### `POST /rovers`
 
-This method creates a new rover
+Creates a new rover
 
-Request 
+##### Request 
 
 ```
 {
@@ -43,7 +43,7 @@ Request
 The `facingDirection` property supports `North`, `South`, `East` and `West` values.
 Any other value will result in a HTTP 400 response
 
-Response
+##### Response
 
 ```
 {
@@ -63,26 +63,66 @@ and turn the robot. They are al POST requests.
 
 Also, the `Location` header contains the endpoint for getting this resource data
 
-`GET /rovers`: Returns the current state of all deployed rovers
+#### `GET /rovers` 
 
-No request body. HTTP 200 if OK
-
-`GET /rover/<id>`: Returns the current state of a specific rover
-
-`POST /rover/<id>/move` : Moves the identified rover. The updated rover is returned
+##### Request 
 
 No request body
 
-Possible HTTP codes
+##### Response
 
-> 200 - The rover has successfully moved
+Returns the current state of all deployed rovers
 
-> 422 - Moving the rover would cause it to go beyond the determined edge 
+#### `GET /rover/<id>`
 
-`POST /rover/<id>/turn-left` : Turns the rover left, returning its state
+##### Request 
+
+No request body
+
+##### Response
+ 
+Returns the current state of a specific rover
+
+#### `POST /rover/<id>/move`
+
+Moves the identified rover.
+
+##### Request
+
+No request body
+
+##### Response
+
+HTTP codes
+
+> 200 (The rover has successfully moved. Return current state)
+
+> 422 (Moving the rover would cause it to go beyond the determined edge) 
+
+####  `POST /rover/<id>/turn-left` 
+
+Turns the rover left
+
+##### Request
 
 No request body. HTTP 200 if OK
 
-`POST /rover/<id>/turn-right`: Turns the rover right, returning its state
+##### Response
 
-No request body. HTTP 200 if OK 
+Rover's current state
+
+#### `POST /rover/<id>/turn-right`
+
+Turns the rover right
+
+##### Request
+
+No request body
+
+##### Response
+
+Rover's current state 
+
+###Todo
+
+1. Create docker image for application

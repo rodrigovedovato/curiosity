@@ -5,12 +5,14 @@ import br.vedovato.model._
 
 class RoverTurningCommandsSpec extends FunSpec {
   val northFacingRover = Rover(
+    id = Some("42"),
     name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.North,
     explorationSurfaceEdge = Coordinate(5, 5))
 
   val southFacingRover = Rover(
+    id = Some("42"),
     name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.South,

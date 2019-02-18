@@ -6,6 +6,7 @@ import org.scalatest.FunSpec
 class RoverMovementCommandSpec extends FunSpec {
 
   val northFacingRover = Rover(
+    id = Some("42"),
     name = Some("Unit Test Rover"),
     position = Coordinate(0, 0),
     facingDirection = Directions.North,

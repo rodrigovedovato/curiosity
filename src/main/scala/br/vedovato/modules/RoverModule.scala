@@ -41,21 +41,21 @@ class RoverModule(implicit ec: ExecutionContext, sys: ActorSystem, mat: Material
   def turnLeft(roverId: RoverId): Future[Option[Rover]] = {
     roverPersistence.pull(roverId).map(_.map(_.turnLeft)) andThen {
       case Success(rover) if rover.isDefined =>
-        roverPersistence.push(rover.get, Some(roverId))
+        roverPersistence.push(rover.get)
     }
   }
 
   def turnRight(roverId: RoverId): Future[Option[Rover]] = {
     roverPersistence.pull(roverId).map(_.map(_.turnRight)) andThen {
       case Success(rover) if rover.isDefined =>
-        roverPersistence.push(rover.get, Some(roverId))
+        roverPersistence.push(rover.get)
     }
   }
 
   def move(roverId: RoverId): Future[Option[Either[CommandFeedback, Rover]]] = {
     roverPersistence.pull(roverId).map(_.map(_.safeMove)) andThen {
       case Success(rover) if rover.isDefined && rover.get.isRight =>
-        roverPersistence.push(rover.get.right.get, Some(roverId))
+        roverPersistence.push(rover.get.right.get)
     }
   }
 }

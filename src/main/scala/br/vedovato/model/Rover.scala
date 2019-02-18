@@ -1,6 +1,7 @@
 package br.vedovato.model
 
 case class Rover(
+  id: Option[String],
   name: Option[String],
   position: Coordinate,
   facingDirection: Direction,
