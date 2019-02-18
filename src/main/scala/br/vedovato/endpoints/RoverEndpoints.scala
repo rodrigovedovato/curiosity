@@ -92,17 +92,17 @@ trait RoverEndpoints extends FailFastCirceSupport {
           }
         } ~
           path(Segment / "move") { roverId =>
-            put {
+            post {
               moveRover(roverId)
             }
           } ~
           path(Segment / "turn-left") { roverId =>
-            put {
+            post {
               turnRoverLeft(roverId)
             }
           } ~
           path(Segment / "turn-right") { roverId =>
-            put {
+            post {
               turnRoverRight(roverId)
             }
           }

@@ -7,9 +7,16 @@ lazy val scalaCacheVersion = "0.27.0"
 
 lazy val root = (project in file(".")).
   settings(
+    mainClass in assembly := Some("br.vedovato.Curiosity"),
+    assemblyJarName in assembly := "curiosity.jar",
+    assemblyMergeStrategy in assembly := {
+      case x if x.endsWith("io.netty.versions.properties") => MergeStrategy.first
+      case x => MergeStrategy.defaultMergeStrategy(x)
+    },
     inThisBuild(List(
       organization    := "br.vedovato",
-      scalaVersion    := "2.12.7"
+      scalaVersion    := "2.12.7",
+      version := "0.1.0"
     )),
     name := "curiosity",
     libraryDependencies ++= Seq(
