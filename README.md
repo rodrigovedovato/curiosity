@@ -16,6 +16,6 @@ The following software need to be installed in order for this API to be built
 
 To build and run this API, execute the run.sh script. 
 
-TODO
+## TODO
 
 - [ ] Create docker image for application
